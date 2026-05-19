@@ -1,0 +1,49 @@
+.status-box-image-upload-preview {
+    .vueperslides__arrow{
+        opacity: 1;
+        .arrow_slider{
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            &.arrow_slider_left{
+                background-image: url(../images/arrow_slider_left.png);
+            }
+            &.arrow_slider_right{
+                background-image: url(../images/arrow_slider_right.png);
+            }
+        }      
+    }
+}
+.status-box-image-upload-list-addmore{
+    .plus-icon{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.status-box-image-upload-list-loading{
+    .loading-icon{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.status-box-main{
+    .status-box-items{
+        .share_link_activity_content{
+            .activity_content_thumb{
+                max-width: 40%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+.status-box-image-upload-preview .vueperslide{
+    background-size: contain;
+    background-repeat: no-repeat;
+}

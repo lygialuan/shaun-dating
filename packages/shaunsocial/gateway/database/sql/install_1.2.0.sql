@@ -1,0 +1,1 @@
+UPDATE `{prefix}permissions` SET `name` = "Manage Payment Gateways" WHERE `key` = 'admin.gateway.manage';

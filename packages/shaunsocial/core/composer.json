@@ -1,0 +1,12 @@
+{
+    "name": "shaunsocial/core",
+    "description": "ShaunSocial - The Next-gen social networking Platform",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "ShaunSocial",
+            "email": "tung.nv@socialloft.com"
+        }
+    ],
+    "require": {}
+}

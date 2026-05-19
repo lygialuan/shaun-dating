@@ -1,0 +1,1 @@
+<div class="control-help control-help-text mb-3">{{__("Post/comment… limitation per day can be controlled by user roles at role setting")}} <a href="{{route('admin.role.index')}}">{{__('here')}}</a>.</div>

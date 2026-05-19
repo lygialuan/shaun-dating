@@ -1,0 +1,2 @@
+INSERT INTO `{prefix}settings` (`key`, `name`, `description`, `value`, `params`, `type`, `order`, `group_id`, `group_sub_id`, `hidden`) VALUES
+('story.share_user_max', 'Maximum number of members that can be selected each time a story is shared (please enter value from 1 to 20)', '', '10', '', 'number', 1, 3, (SELECT `id` FROM `{prefix}setting_group_subs` WHERE `key` = 'story'), 0);

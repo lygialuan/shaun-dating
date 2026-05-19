@@ -1,0 +1,47 @@
+.main-content-menu{
+    scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+    a{
+        border-color: transparent;
+        color: $base-main-color;
+        &.router-link-exact-active{
+            color: $primary-color;
+            font-weight: 600;
+            .main-content-menu-item-wrap{
+                border-color: $primary-color;
+            }
+        }
+    }
+    &.user-pages-list{
+        a{
+            &.router-link-active{
+                border-color: $primary-color;
+                color: $primary-color;
+                font-weight: 600;
+            }
+        }
+    }
+}
+.user_pages_list{
+    &_top,
+    &_center,
+    &_bottom{
+        .vueperslides__arrow{
+            opacity: 1;
+            svg{
+                width: auto;
+                padding: 0;
+                stroke: unset;
+                fill: currentColor;
+            }
+        }
+        .vueperslides__arrows--outside .vueperslides__arrow--prev, .vueperslides--rtl .vueperslides__arrows--outside .vueperslides__arrow--next{
+            left: 0.625rem;
+        }
+        .vueperslides__arrows--outside .vueperslides__arrow--next, .vueperslides--rtl .vueperslides__arrows--outside .vueperslides__arrow--prev{
+            right: 0.625rem;
+        }
+    }
+}

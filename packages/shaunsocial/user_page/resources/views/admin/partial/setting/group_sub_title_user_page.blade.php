@@ -1,0 +1,1 @@
+<div class="control-help control-help-text">{{__("As an admin, if you want to create multiple fake accounts to communicate with the real account to increase system interaction, you can create multiple sub-profiles. You will receive notifications for updates related to these sub-profiles so you can take timely action.")}}</div>

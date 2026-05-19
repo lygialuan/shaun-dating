@@ -1,0 +1,11 @@
+.main-content-menu-tab{
+    &-item{
+        &.router-link-exact-active{
+            background-color: $primary-color;
+            color: #fff;
+        }
+    }
+}
+.header-profile{
+    @apply bg-white rounded-none md:rounded-base-lg dark:bg-slate-800 mb-base-2;
+}

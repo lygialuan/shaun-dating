@@ -1,0 +1,29 @@
+/*Header Mobile */
+.header-mobile{
+    box-shadow: none;
+}
+@media(max-width: 1025px){
+    .global-search-header-mobile{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1001;
+        padding: 50px 20px 20px;
+        background-color: #fff;
+        .global-search-header{
+            max-width: 100%;
+        }
+        #closeMobileSearchBtn{
+            position: absolute;
+            top: 14px;
+            [dir="ltr"] & {
+                right: 18px;
+            }
+            [dir="rtl"] & {
+                left: 18px;
+            }
+        }
+    }
+}

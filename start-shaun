@@ -1,0 +1,27 @@
+#!/bin/bash
+
+WORKDIR="/var/www/html"
+
+echo "RUN: start-container in background"
+if [[ ! -f "$WORKDIR/.env" ]];then cd $WORKDIR;cp -v ./.env_example ./.env; fi;
+start-container &
+
+echo "RUN: check 'artisan.installed'. Delete this file to reinstall."
+
+if [[ ! -f "$WORKDIR/artisan.installed" ]]; then
+    sleep 5
+    cd $WORKDIR
+    php artisan migrate
+    php artisan shaun_core:install
+    touch "$WORKDIR/artisan.installed"
+fi
+
+if [[ -n "$DEV" ]]; then 
+    echo "RUN: nodejs dev"
+    cd $WORKDIR
+    npm run dev &
+fi
+
+echo "Press Ctrl + C to exit..."
+
+sleep infinity

@@ -1,0 +1,1 @@
+{{__('Min daily budget')}} ({{getWalletTokenName()}})

@@ -1,0 +1,1 @@
+{{__('Price per view')}} ({{getWalletTokenName()}})

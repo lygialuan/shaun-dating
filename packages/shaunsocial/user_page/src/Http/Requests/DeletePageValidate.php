@@ -1,0 +1,37 @@
+<?php
+
+
+namespace Packages\ShaunSocial\UserPage\Http\Requests;
+
+use Packages\ShaunSocial\Core\Exceptions\MessageHttpException;
+use Packages\ShaunSocial\Core\Validation\PasswordVerifyValidation;
+
+class DeletePageValidate extends PageValidate
+{
+    public function authorize()
+    {
+        return $this->user()->canDelete() && setting('user.allow_delete') && $this->user()->isPageOwner();
+    }
+
+    public function rules()
+    {
+        return [
+            'password' => [
+                'required',
+                new PasswordVerifyValidation(),
+            ],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'password.required' => __('The password is required.'),
+        ];
+    }
+
+    protected function failedAuthorization()
+    {
+        throw new MessageHttpException(__('You can not delete your account.'));
+    }
+}

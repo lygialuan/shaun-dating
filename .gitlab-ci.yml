@@ -1,0 +1,58 @@
+stages:
+    - build-frontend
+    - deploy-stage
+
+build-js:
+ image: node:22-alpine
+ stage: build-frontend
+ before_script:
+   - echo "🚀 Installing dependencies for Vue.js build..."
+   - apk add --no-cache git
+ script:
+   - node -v
+   - npm -v
+   - cat package.json
+   - echo "🗑️ Removing old node_modules and package-lock.json..."
+   - rm -rf node_modules/ package-lock.json
+   - echo "📦 Installing npm dependencies..."
+   - npm install
+   - echo "🔍 Checking installed dependencies..."
+   - npm list laravel-vite-plugin
+   - echo "⚡ Building Vue.js application..."
+   - npm run build
+ only:
+   - dev
+ artifacts:
+   paths:
+     - public/build/
+ allow_failure: false
+
+
+deploy-stage:
+  image: alpine:latest  # ✅ Using Alpine for lightweight SSH & rsync support
+  stage: deploy-stage
+  before_script:
+    - echo "🔑 Setting up SSH and Rsync..."
+    - apk add --no-cache openssh-client openssl rsync
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY_STAGE" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "StrictHostKeyChecking no" > ~/.ssh/config
+    - chmod 600 ~/.ssh/config
+  script:
+    - echo "🚀 Deploying to STAGE Server..."
+    - rsync -avz --info=NAME --itemize-changes --no-perms --omit-dir-times --exclude='.git*' -exclude='node_modules' -e "ssh -p 2211 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" ./ $USER_HOST_STAGE:/var/www/html/php83/shaun-dating/ || { echo "❌ Rsync failed, exiting..."; exit 1; }
+    # 🚀 Run Laravel cache optimizations and restart queue
+    - echo "⚡ Running Laravel cache optimizations and restarting queues..."
+    - ssh -p 2211 -o StrictHostKeyChecking=no $USER_HOST_STAGE "cd /var/www/html/php83/shaun-dating && php8.3 /usr/local/bin/composer install && php8.3 artisan cache:clear && php8.3 artisan view:clear && php8.3 artisan route:clear && php8.3 artisan config:cache && php8.3 artisan queue:restart"
+
+    # 📌 Run migrations if needed (currently commented out)
+    - echo "⚠️ Running database migrations (disabled by default)..."
+    - ssh -p 2211 -o StrictHostKeyChecking=no $USER_HOST_STAGE "cd /var/www/html/php83/shaun-dating && php8.3 artisan migrate --force"
+    - echo "✅ Deployment STAGE complete"
+  only:
+    - dev
+  needs:
+    - job: build-js
+      artifacts: true

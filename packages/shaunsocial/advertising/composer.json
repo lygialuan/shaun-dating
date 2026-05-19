@@ -1,0 +1,14 @@
+{
+    "name": "shaunsocial/advertising",
+    "description": "Advertising for shaunsocial",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "ShaunSocial",
+            "email": "tung.nv@socialloft.com"
+        }
+    ],
+    "require": {
+        "shaunsocial/core": "^1.2.0"
+    }
+}

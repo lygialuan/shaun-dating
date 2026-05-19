@@ -1,0 +1,17 @@
+**/node_modules/
+**/public/hot
+**/public/storage
+**/storage/*.key
+**/vendor/
+auth.json
+.env
+.env.*
+*.cache
+*.log
+**/.fleet
+**/.idea
+**/.vscode
+package-lock.json
+composer.lock
+artisan.installed
+Dockerfile

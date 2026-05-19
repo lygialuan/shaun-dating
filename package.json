@@ -1,0 +1,69 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite & sass -w resources/scss/:resources/css/",
+        "build": "vite build",
+        "extract": "node export-i18n.js"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.8",
+        "axios": "^1.6.5",
+        "laravel-vite-plugin": "^0.7.2",
+        "lodash": "^4.17.19",
+        "postcss-import": "^14.1.0",
+        "postcss-nesting": "^10.1.10",
+        "tailwindcss": "^3.1.8",
+        "tailwindcss-rtl": "^0.9.0",
+        "vite": "^4.0.0",
+        "@intlify/unplugin-vue-i18n": "0.12.2",
+        "click-outside-vue3": "^4.0.1",
+        "eslint": "^8.22.0",
+        "eslint-plugin-vue": "^9.3.0",
+        "terser": "^5.14.2",
+        "vite-plugin-eslint": "^1.8.1",
+        "vue-draggable-next": "^2.1.1",
+        "vue-i18n-extract": "^2.0.7",
+        "vue-router": "^4.5",
+        "vueperslides": "^3.4.2",
+        "@vue/compiler-sfc": "^3.5",
+        "primeicons": "^7.0.0",
+        "primevue": "^4.3.6",
+        "v3-infinite-loading": "^1.2.1",
+		"store2": "^2.14.2",
+		"laravel-echo": "^1.14.0",
+		"pusher-js": "^7.4.0",
+        "vue-advanced-cropper": "^2.8.6",
+        "vue-recaptcha-v3": "^2.0.1",
+        "fabric": "^5.3.0",
+        "vue": "^3.5",
+        "vue3-sticky-sidebar": "^2.0.0",
+        "chart.js": "^3.0.0",
+        "embedplay-tiktok-vue": "^1.0.2",
+        "firebase": "^11.10.0"
+    },
+    "dependencies": {
+        "@vitejs/plugin-vue": "^4.2.3",
+        "vue-i18n": "^9.1.10",
+        "pinia": "^2.1.4",
+        "pinia-plugin-persistedstate": "^3.1.0",
+        "vue-turnstile": "^1.0.11",
+        "audio-recorder-polyfill": "^0.4.1",
+        "vue-tel-input": "^9.3.0",
+        "marked": "^16.2.1"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "rules": {
+            "vue/no-multiple-template-root": "off",
+            "vue/multi-word-component-names": "off",
+            "vue/no-v-model-argument": "off"
+        }
+    }
+}

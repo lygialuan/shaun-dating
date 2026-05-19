@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule (.*)$ ws://127.0.0.1:6001/$1 [P,L]
+</IfModule>
+
+

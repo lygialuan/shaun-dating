@@ -1,0 +1,1 @@
+<div class="control-help control-help-text mb-3">{!!__("Please click :1 to know how to obtain the information below", ['1' => '<a target="_blank" href="https://docs.shaunsocial.com/docs/progressive-web-app-configuration">'.__('here').'</a>'])!!}</div>

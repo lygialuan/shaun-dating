@@ -1,0 +1,2 @@
+INSERT INTO `{prefix}settings` (`key`, `name`, `description`, `value`, `params`, `type`, `order`, `group_id`, `group_sub_id`, `hidden`) VALUES
+('shaun_user_page.enable', 'Enable page', "The system will only disable some main features of the page such as: page menu, option to switch on main menu and pages tab in search results page. Pages that have been created can still continue to operate normally.", '1', '', 'checkbox', 0, 2, (SELECT `id` FROM `{prefix}setting_group_subs` WHERE `key` = 'user_page'), 0);

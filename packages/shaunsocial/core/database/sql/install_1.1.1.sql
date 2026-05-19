@@ -1,0 +1,1 @@
+DELETE FROM `{prefix}settings` WHERE `key`='mobile.google_firebase_server_key';

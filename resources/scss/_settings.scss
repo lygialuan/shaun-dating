@@ -1,0 +1,13 @@
+.settings-list{
+    &-item{
+        border-inline-end: 2px solid transparent;
+        &:hover{
+            color: inherit;
+        }
+        &.router-link-exact-active{
+            border-color: $primary-color;
+            color: $primary-color;
+            font-weight: 600;
+        }
+    }
+}

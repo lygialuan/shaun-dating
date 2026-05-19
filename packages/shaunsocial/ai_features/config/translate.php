@@ -1,0 +1,23 @@
+<?php
+__('AI Features');
+__('Chatbot');
+__('Select AI Platform do you want to use for Chatbot');
+__('Auto detect inappropriate text in a post, comment and reply');
+__('Detect and flag inappropriate text (hate speech, violence, etc...)');
+__('Select AI Platform do you want to use for detecting inappropriate text');
+__('List of AI Platforms can be configure here. API call fee will be applied, please check pricing of the selected AI platform carefully.');
+__('Auto detect inappropriate image in a post, comment and reply');
+__('Detect and flag inappropriate image (adult, sensitive....)');
+__('Select AI Platform do you want to use for detecting inappropriate image');
+__('Auto detect inappropriate video in a post or vibb (reel)');
+__('Detect and flag inappropriate video (adult, sensitive....)');
+__('Select AI Platform do you want to use for detecting inappropriate video');
+__('Auto delete inappropriate content');
+__('If AI found inappropriate content in a POST, it will automatically delete the POST and send member an notification');
+__('Select AI Platform do you want to use for auto delete inappropriate content');
+__("This api key is invalid or can't be used. Please check and reconfigure.");
+__('No provider selected');
+__('Unknown Provider');
+__('Inactive');
+__('Manage AI Providers');
+__('Manage AI Feature Tasks');

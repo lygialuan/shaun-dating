@@ -1,0 +1,1 @@
+UPDATE `{prefix}story_items` SET `is_active` = 1;

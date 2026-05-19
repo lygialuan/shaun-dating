@@ -1,0 +1,2 @@
+INSERT INTO `{prefix}translations` (`table_name`, `column_name`, `foreign_key`, `locale`, `value`) VALUES
+('permissions', 'message_error', (SELECT `id` FROM `{prefix}permissions` WHERE `key` = 'user_page.allow_create') ,'en', "You don't have sub-profiles creation permission.");

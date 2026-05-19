@@ -1,0 +1,2 @@
+INSERT INTO `{prefix}wallet_transaction_sub_types` (`parent_type_id`, `type`, `class`) VALUES
+(4, 'user_subscription_buy', 'Packages\\ShaunSocial\\UserSubscription\\Wallet\\Payment\\UserSubscriptionTransactionTypeBuy');

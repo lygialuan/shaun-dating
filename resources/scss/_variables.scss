@@ -1,0 +1,51 @@
+$primary-color: theme('colors.primary-color');
+$dark-primary-color: theme('colors.dark-primary-color');
+$base-main-color: theme('colors.main-color');
+$slate-400: theme('colors.slate-400');
+$slate-800: theme('colors.slate-800');
+$gray-300: theme('colors.gray-300');
+$dark-web-wash: theme('colors.dark-web-wash');
+$white: theme('colors.white');
+$dark-body: theme('colors.dark-body');
+$badge-color: theme('colors.badge-color');
+$white-10: theme('colors.white/10');
+$input-background-color: theme('colors.input-background-color');
+$input-text-color: theme('colors.input-text-color');
+$input-border-color: theme('colors.input-border-color');
+$input-icon-color: theme('colors.input-icon-color');
+$input-placeholder-color: theme('colors.input-placeholder-color');
+$input-disabled-background-color: theme('colors.input-disabled-background-color');
+$input-disabled-border-color: theme('colors.input-disabled-border-color');
+$invalid-color: theme('colors.invalid-color');
+$table-border-color: theme('colors.table-border-color');
+$light-blue: theme('colors.light-blue');
+$always-white: theme('colors.white');
+$backdrop-color: rgba(0, 0, 0, 0.75);
+$button-corner-radius: theme('borderRadius.base');
+$input-corner-radius: theme('borderRadius.base');
+$base-red: theme('colors.base-red');
+$base-green: theme('colors.base-green');
+$base-yellow: theme('colors.base-yellow');
+$scroll-thumb: #bcc0c4;
+$divider: theme('colors.divider');
+$always-white: #fff;
+$always-black: #000;
+$secondary-box-color: theme('colors.secondary-box-color');
+$footer-linear: theme('backgroundImage.footer-linear');
+$font-base-sm: theme('fontSize.base-sm');
+$input-placeholder-dark-color: theme('colors.input-placeholder-dark-color');
+$scrollbar-thumb: theme('colors.scrollbar-thumb');
+$scrollbar-thumb-dark: theme('colors.scrollbar-thumb-dark');
+$gray-6: theme('colors.gray-6');
+
+:root{
+    --scrollbar-thumb: #bbb;
+    --scrollbar-track: #F2F2F2;
+    --hover-overlay: rgba(0, 0, 0, .03);
+}
+
+:root.dark{
+    --scrollbar-thumb: #ffffff26;
+    --scrollbar-track: #334155;
+    --hover-overlay: rgba(255, 255, 255, .1);
+}

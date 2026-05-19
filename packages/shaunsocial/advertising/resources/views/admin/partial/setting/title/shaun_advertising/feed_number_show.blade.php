@@ -1,0 +1,1 @@
+{{__('Position of the active ads will appear on the feed. (Please enter value from 3 to :1).',['1' => setting('feature.item_per_page')])}}

@@ -1,0 +1,1 @@
+<div class="control-help control-help-text">{{__("Allows you to broadcast your server-side Laravel events to your client-side JavaScript application using a driver-based approach to WebSockets. See more details")}} <a target="_blank" href="https://laravel.com/docs/11.x/broadcasting">{{__('here')}}</a>.</div>

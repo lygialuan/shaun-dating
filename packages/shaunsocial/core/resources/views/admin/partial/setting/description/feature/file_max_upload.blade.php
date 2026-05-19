@@ -1,0 +1,3 @@
+<p class="control-help control-help-{{ __($setting->type) }}">
+    {{__("Specify the size limit that applies to each file separately to restrict the allowed uploaded file size. If you leave it empty, the size will be limited by PHP's maximum post and file upload size (current limit is :size). If you change the value here, make sure you change the PHP's maximum post and file upload size as well.",['size' => getMaxUploadFilesServer().'Kb'])}}
+</p>

@@ -1,0 +1,2 @@
+<input type="text" style="display: none;" id="{{ md5($setting->key) }}" name="{{ $setting->key }}" value="{{$setting->value}}" class="setting_input_text" />
+@include('shaun_core::admin.partial.utility.autocompplete_user', ['value' => $setting->value, 'id' => $setting->key])

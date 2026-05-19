@@ -1,0 +1,14 @@
+{
+    "name": "shaunsocial/user_verify",
+    "description": "User verify for shaunsocial",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "ShaunSocial",
+            "email": "tung.nv@socialloft.com"
+        }
+    ],
+    "require": {
+        "shaunsocial/core": "^1.0"
+    }
+}

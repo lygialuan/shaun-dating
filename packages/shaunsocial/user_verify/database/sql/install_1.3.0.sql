@@ -1,0 +1,2 @@
+INSERT INTO `{prefix}settings` (`key`, `name`, `description`, `value`, `params`, `type`, `order`, `group_id`, `group_sub_id`, `hidden`) VALUES
+('user_verify.unverify_when', 'Users lost their verification status when', '', '1', '{"path":"shaun_user_verify::admin.partial.setting.name.unverify_when"}', 'blade', 5, 2,  (SELECT `id` FROM `{prefix}setting_group_subs` WHERE `key` = 'user_verify'), 0);

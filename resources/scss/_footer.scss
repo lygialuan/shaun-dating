@@ -1,0 +1,30 @@
+.main-footer-menu{
+    & .main-footer-menu-list{
+        & li{
+            display: inline-block;
+            & a{
+                &:after{
+                    content: ".";
+                    display: inline-block;
+                    padding-inline-start: 7px;
+                    padding-inline-end: 7px;
+                    position: relative;
+                    top: -4px;
+                }             
+            }
+            &:last-child{
+                & a:after{
+                    content: none;
+                }
+            }
+        }
+    }
+}
+.footer-mobile{
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.02), 0px -2px 4px rgba(0, 0, 0, 0.08);
+    &-item{
+        .router-link-exact-active{
+            color: $primary-color;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "shaunsocial/story",
+    "description": "Story for shaunsocial",
+    "version": "1.1.0",
+    "authors": [
+        {
+            "name": "ShaunSocial",
+            "email": "tung.nv@socialloft.com"
+        }
+    ],
+    "require": {
+        "shaunsocial/core": "^1.1.0"
+    }
+}

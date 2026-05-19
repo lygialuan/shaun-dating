@@ -1,0 +1,65 @@
+.activity_content_photos_list {
+    .vueperslides__inner{
+        .vueperslide{
+            background-size: contain;
+        }
+        .vueperslides__bullets{
+            display: flex;
+            margin: 0 auto;
+            width: 84px;
+            overflow: hidden;
+            padding: 20px 0;
+            z-index: 2;
+            .vueperslides__bullet{
+                margin: 0 4px;
+                transition: .5s ease-in-out transform;
+                .default{
+                    background-color: #D9D9D9;
+                    border-color: #D9D9D9;
+                    width: 6px;
+                    height: 6px;
+                    box-shadow: rgba(100, 100, 111, 0.6) 0px 0px 7px 0px;
+                    transition: .2s ease-in-out;
+                }
+            }
+            .vueperslides__bullet--active .default{
+                background-color: $white;
+                border-color: $white;
+                border-width: 4px;
+            }
+        }
+        .vueperslides__arrow {
+            opacity: 1;
+            svg{
+                padding: 0;
+                width: auto;
+                fill: currentColor;
+            }    
+        }
+        &::after{
+            content: '';
+            background-image: $footer-linear;
+            width: 100%;
+            height: 80px;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+    }
+}
+.feed-share-content{
+    .vueperslides__bullets{
+        display: none;
+    }
+}
+.fast-fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+.gast-fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

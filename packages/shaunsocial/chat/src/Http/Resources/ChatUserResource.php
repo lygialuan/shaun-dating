@@ -1,0 +1,81 @@
+<?php
+
+namespace Packages\ShaunSocial\Chat\Http\Resources;
+
+use Illuminate\Http\Resources\Json\JsonResource;
+use Packages\ShaunSocial\Core\Http\Resources\User\PhotoVerifyItemResource;
+use Packages\ShaunSocial\Dating\Http\Resources\DatingAttributeValueResource;
+use Packages\ShaunSocial\Dating\Http\Resources\DatingInterestAttributeValueResource;
+use Packages\ShaunSocial\Dating\Models\DatingSearchHistory;
+use Packages\ShaunSocial\Core\Models\UserActionLog;
+use Packages\ShaunSocial\Core\Enum\PhotoVerifyItemStatus;
+use Packages\ShaunSocial\Dating\Models\DatingSwipeMatch;
+use Packages\ShaunSocial\Chat\Models\ChatRoom;
+use Carbon\Carbon;
+
+class ChatUserResource extends JsonResource
+{
+    public function toArray($request)
+    {        
+        $viewer = $request->user();
+        $viewerId = $viewer ? $viewer->id : 0;
+        $isAdmin = false;
+       
+        $photosVerify = $this->getPhotoVerifyItem();
+        $photosVerifyApprove =  $this->getPhotoVerifyItem(PhotoVerifyItemStatus::APPROVE->value);
+
+        $attributes = $this->getOriginAttributeValues();
+        $interestAttributes = $this->getOriginInterestAttributeValues();
+        $datingSearchHistory = DatingSearchHistory::findByField('user_id', $this->id);
+
+        $gender = $this->getGender();
+        $birthday = null;
+        if ($this->birthday) {
+            $birthday = new Carbon($this->birthday);
+        }
+
+        $chatRoomId = 0;
+        if ($viewerId) {
+            $room = ChatRoom::getRoomTwoUser($viewerId, $this->id);
+            if ($room) {
+                $chatRoomId = $room->id;
+            }
+        }
+        return [
+            'id' => $this->id,
+            'name' => $this->getName(),
+            'is_online' => $this->isOnline($viewer ? $viewer->id : 0),
+            'user_name' => $this->user_name,
+            'avatar' => $this->getAvatar(),
+            'href' => $this->getHref(),
+            'is_verify' => $this->isVerify(),
+            'about' => $this->about,
+            'company_name' => $this->company_name,
+            'job_title' => $this->job_title,
+            'school_name' => $this->school_name,
+            'links' => $this->getLinks() ?? '',
+            'attributes' => $attributes ? DatingAttributeValueResource::collection($attributes) : [],
+            'interest_attributes' => $interestAttributes ? DatingInterestAttributeValueResource::collection($interestAttributes) : [],
+            'age'=> $birthday ? $birthday->age : null,
+            'gender' => ($gender ? $gender->getTranslatedAttributeValue('name') : ''),
+            'address_full' => $this->getAddessFull(),
+            'dating_addresses_id' => $this->dating_addresses_id,
+            'dating_addresses_fulltext' => $this->dating_addresses_fulltext,
+            'address' => $this->location,
+            'dating_search_history' => json_decode($datingSearchHistory?->query, true),
+            'can_view_location' => $this->canViewLocation($viewerId) || $isAdmin,
+            'can_view_age' => $this->canViewAge($viewerId) || $isAdmin,
+            'can_prowse_profile_privately' => $this->canBrowseProfilePrivately($viewerId),
+            'blur_avatar' => $this->getAvatarBlur(),      
+            'total_swipe_right'=> UserActionLog::getCount($viewerId, 'dating_swipe'),
+            'check_swipe'=> $viewer ? $viewer->checkSwipes($this->id) : false,
+            'can_use_gift' => $this->canUseGift(),
+            'matched' => DatingSwipeMatch::checkMatched($viewerId, $this->id),
+            'photos_verify' => PhotoVerifyItemResource::collection($photosVerify),
+            'photos_verify_approve' => PhotoVerifyItemResource::collection($photosVerifyApprove),
+            'chat_room_id' => $chatRoomId,
+            'can_view_my_gift' => $this->canViewMyGift($viewerId) || $isAdmin,
+            'total_gift_received' => $this->getTotalReceived($this->id),
+        ];
+    }
+}

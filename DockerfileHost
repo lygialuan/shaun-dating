@@ -1,0 +1,20 @@
+FROM sail-8.2/app
+
+#RUN mkdir -p ./packages/shaunsocial/core/src ./packages/shaunsocial/chat/src ./packages/shaunsocial/story/src
+#COPY package.json composer.json ./
+# RUN cp -v ./.env_example ./.env
+
+COPY . .
+
+RUN composer install; \
+    npm i -g vite --force; \
+    npm i --force; \
+    npm run build
+
+RUN chown -R sail:sail /var/www/html
+COPY start-shaun /usr/local/bin/start-shaun
+RUN chmod +x /usr/local/bin/start-shaun
+
+ENTRYPOINT [ "start-shaun" ]
+
+#COPY . .

@@ -1,0 +1,13 @@
+<template>
+	<LikedMeList action="i_liked"/>
+</template>
+
+<script>
+import LikedMeList from '@/components/matched/LikedMeList.vue'
+
+export default {
+	components: { 
+		LikedMeList
+	},
+}
+</script>

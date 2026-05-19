@@ -1,0 +1,161 @@
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    padding: 0.375rem 0.9375rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: $button-corner-radius;
+    position: relative;
+    flex-shrink: 0;
+    outline: none;
+}
+.btn-block{
+    width: 100%;
+}
+.btn{
+    &-primary{
+        background-color: $primary-color; 
+        border-color: $primary-color;
+        color: $always-white;
+        .btn-badge{
+            border-color: $always-white;
+            color: $always-white;
+        }
+    }
+    &-secondary{
+        background-color: #AAAAAA; 
+        border-color: #AAAAAA;
+        color: #fff;
+        .btn-badge{
+            border-color: $always-white;
+            color: $always-white;
+        }
+    }
+    &-outlined{
+        background-color: transparent; 
+        border-color: $primary-color;
+        color: $primary-color;
+        .btn-badge{
+            border-color: $primary-color;
+            color: $primary-color;
+        }
+    }
+    &-secondary-outlined{
+        background-color: transparent;
+        border-color: $secondary-box-color;
+        color: $base-main-color;
+        .btn-badge{
+            border-color: $base-main-color;
+            color: $base-main-color;
+        }
+    }
+    &-danger{
+        background-color: $invalid-color; 
+        border-color: $invalid-color; 
+        color: #fff;
+        .btn-badge{
+            border-color: $always-white;
+            color: $always-white;
+        }
+    }
+    &-danger-outlined{
+        background-color: transparent; 
+        border-color: $invalid-color; 
+        color: $invalid-color; 
+        .btn-badge{
+            border-color: $invalid-color; 
+            color: $invalid-color; 
+        }
+    }
+    &-transparent{
+        background-color: transparent; 
+        border-color: transparent;
+        color: $primary-color;
+        .btn-badge{
+            border-color: $primary-color;
+            color: $primary-color;
+        }
+    }
+    &-success{
+        background-color: $base-green; 
+        border-color: $base-green;
+        color: #fff;
+        .btn-badge{
+            border-color: $always-white;
+            color: $always-white;
+        }
+    }
+    &-warning{
+        background-color: $base-yellow; 
+        border-color: $base-yellow; 
+        color: #fff;
+        .btn-badge{
+            border-color: $always-white;
+            color: $always-white;
+        }
+    }
+    &-size-xs{
+        padding: 0.3125rem 0.5rem;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        &.btn-icon-only{
+            padding: 0.3125rem;
+        }
+    }
+    &-size-sm{
+        padding: 0.3125rem 0.625rem;
+        font-size: 0.85rem;
+        line-height: 1.25rem;
+        &.btn-icon-only{
+            padding: 0.375rem;
+        }
+    }
+    &-size-md{
+        padding: 0.375rem 0.9375rem;
+        font-size: 0.9375rem;
+        line-height: 1.5rem;
+        &.btn-icon-only{
+            padding: 0.375rem;
+        }
+    }
+    &-size-lg{
+        padding: 0.5rem 1.125rem;
+        font-size: 1.25rem;
+        line-height: 2rem;
+        &.btn-icon-only{
+            padding: 0.6875rem;
+        }
+    }
+    &-badge{
+        &-xs{
+            font-size: 0.625rem;
+            padding: 0.125rem;
+            min-width: 1rem;
+        }
+        &-sm{
+            font-size: 0.75rem;
+            padding: 0.1875rem;
+            min-width: 1.25rem;
+        }
+        &-md{
+            font-size: 0.8125rem;
+            padding: 0.28125rem;
+            min-width: 1.5rem;
+        }
+        &-lg{
+            font-size: 0.9rem;
+            padding: 0.4875rem;
+            min-width: 2rem;
+        }
+    }
+}

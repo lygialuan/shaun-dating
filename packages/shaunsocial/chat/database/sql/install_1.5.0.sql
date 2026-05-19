@@ -1,0 +1,2 @@
+INSERT INTO `{prefix}settings` (`key`, `name`, `description`, `value`, `params`, `type`, `order`, `group_id`, `group_sub_id`, `hidden`) VALUES
+('chat.enable_gifs', 'Enable Tenor Gifs', 'Allow gif at chat', '1', '', 'checkbox', 5, 2, (SELECT `id` FROM `{prefix}setting_group_subs` WHERE `key` = 'chat'), 0);

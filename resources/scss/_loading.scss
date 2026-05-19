@@ -1,0 +1,12 @@
+img.loading-img{
+    -webkit-animation:2s linear infinite pulse_preload;
+    animation:2s linear infinite pulse_preload
+}
+@-webkit-keyframes pulse_preload {
+    0%,100%{-webkit-transform:scale(1);transform:scale(1)}
+    50%{-webkit-transform:scale(1.1);transform:scale(1.1)}
+}
+@keyframes pulse_preload{
+    0%,100%{-webkit-transform:scale(1);transform:scale(1)}
+    50%{-webkit-transform:scale(1.1);transform:scale(1.1)}
+}
